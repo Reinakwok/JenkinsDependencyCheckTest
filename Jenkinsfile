@@ -1,15 +1,10 @@
 pipeline {
 	agent any
 	stages {
-		// stage('Checkout SCM') {
-		// 	steps {
-		// 		git 'C:/Users/reina/Documents/SIT/Year2/Tri3/JenkinsDependencyCheckTest'
-		// 	}
-		// }
 
 		stage('OWASP DependencyCheck') {
 			steps {
-				dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'Default'
+				dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
 			}
 		}
 	}	
