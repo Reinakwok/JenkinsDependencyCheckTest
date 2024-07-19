@@ -4,7 +4,7 @@ pipeline {
 
 		stage('OWASP DependencyCheck') {
 			steps {
-				bat 'dependency-check.bat --format HTML --format XML'
+				dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
 			}
 		}
 	}	
