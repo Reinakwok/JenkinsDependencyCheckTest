@@ -1,12 +1,17 @@
 pipeline {
     agent any
     environment {
-        NVD_API_KEY = credentials('NVD_API_KEY')
+        NVD_API_KEY = credentials('nvd-api-key')
     }
     stages {
+        // stage('Checkout SCM') {
+        //     steps {
+        //         git url: 'https://github.com/ElizabethLanyl/SSD-lab06-jenkinsowasp.git', branch: 'master', credentialsId: 'jenkins-PAT'
+        //     }
+        // }
         stage('OWASP DependencyCheck') {
             steps {
-                dependencyCheck additionalArguments: '--format HTML --format XML --nvdApiKey %NVD_API_KEY%', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
+                dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'owasp'
             }
         }
     }
