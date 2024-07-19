@@ -4,11 +4,6 @@ pipeline {
         NVD_API_KEY = credentials('nvd-api-key')
     }
     stages {
-        stage('Checkout SCM') {
-            steps {
-               credentialsId: 'jenkins-PAT'
-            }
-        }
         stage('OWASP DependencyCheck') {
             steps {
                 dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'OWASP Dependency-Check Vulnerabilities'
