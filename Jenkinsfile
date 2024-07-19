@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Checkout SCM') {
 			steps {
-				'C:\Users\reina\Documents\SIT\Year2\Tri3\ICT2216 Secure Software Development\Labs\JenkinsDependencyCheckTest'
+				'C:/Users/reina/Documents/SIT/Year2/Tri3/ICT2216 Secure Software Development/Labs/JenkinsDependencyCheckTest'
 			}
 		}
 
