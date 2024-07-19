@@ -1,11 +1,11 @@
 pipeline {
 	agent any
 	stages {
-		stage('Checkout SCM') {
-			steps {
-				git 'C:/Users/reina/Documents/SIT/Year2/Tri3/JenkinsDependencyCheckTest'
-			}
-		}
+		// stage('Checkout SCM') {
+		// 	steps {
+		// 		git 'C:/Users/reina/Documents/SIT/Year2/Tri3/JenkinsDependencyCheckTest'
+		// 	}
+		// }
 
 		stage('OWASP DependencyCheck') {
 			steps {
